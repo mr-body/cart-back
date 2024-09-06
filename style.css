@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    position: relative;
+    contain: content;
+    overflow: hidden;
+    padding: 10px;
+}
+
+main{
+    display: flex;
+    height: 100%;
+}
+
+main nav{
+    width: 70px;
+    height: 100%;
+    background-color: #efefefef;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-around;
+}
+
+main nav .logo
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main nav .logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+main nav .logo .category{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 22px;
+    background-color: #0e00001f;
+    width: 70%;
+    padding: 20px 0 20px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+main nav .logo .category i{
+    margin: 10px 5px 10px 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+main nav .logo .category .level:active
+{
+    color: rgb(252, 52, 95);
+    transform: scale(135%);
+}
+
+main nav .logo .category .active{
+    color: white;
+    background-color: rgb(252, 52, 95);
+}
+
+main nav .paths{
+    display: flex;
+    flex-direction: column;
+}
+
+main nav .paths .cart span{ 
+    background-color: red;
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 0;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    font-size: 6pt;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+main nav .paths .cart{
+    position: relative;
+}
+
+main nav .paths i{
+    margin-bottom: 25px;
+    font-size: 22pt;
+    color: #00000060;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+main nav .paths i:hover
+{
+    color:rgb(252, 52, 95);
+    transform: rotate(-10deg);
+}
+
+main nav .paths i:active
+{
+    transform: scale(90%);
+    color:rgb(155, 35, 61);
+}
+
+main nav .user img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+main section{
+    width: calc(100% - 70px);
+    height: 100%;
+    padding: 0 10px 0 10px;
+}
+
+/* Dark Mode */
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-nav{
+    background-color: rgb(40, 40, 40);
+}
+
+.dark-mode nav .paths  i {
+    color: #ffffffbd; /* Altere a cor dos ícones no modo escuro */
+}
+
+.dark-mode nav .paths .cart span {
+    background-color: #ff7d7d; /* Altere o background da notificação do carrinho */
+}
+
+.dark-mode nav .user img{
+    border:  2px solid rgb(252, 52, 95);
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+    body{
+        height: 100vh;
+        overflow: auto;
+    }
+    main{
+        flex-direction: column;
+    }
+    main nav{
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        border-radius: 8px;
+        flex-direction: row;
+        align-items: center;
+        border: 1px solid rgba(252, 52, 95, 0.24);;
+        justify-content: space-around;
+        box-shadow: -2px 9px 9px rgba(252, 52, 95, 0.144);;
+    }
+    main nav .logo{
+        flex-direction: row;
+    }
+    main nav .logo .category .active{
+        background-color: transparent;
+        color: rgb(252, 52, 95);
+        position: relative;
+    }
+    main nav .logo .category .active::after
+    {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: rgb(252, 52, 95);
+        border-radius: 2px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    main nav .logo img{
+        margin-bottom: 0;
+        display: none;
+    }
+    main nav .logo .category{
+        flex-direction: row;
+        height: 30px;
+        justify-content: center;
+        background-color: transparent;
+    }
+    .dark-mode nav .paths{
+        background-color: #333;
+    }
+    main nav .paths{
+        flex-direction: row;
+        background-color: #dddd;
+        justify-items: center;
+        height: 35px;
+        padding: 7px;
+        border-radius: 4px;
+        justify-self: center;
+        margin-right: 5px;
+        justify-content: center;
+    }
+    main nav .paths i{
+        font-size: 18pt;
+        margin: 0 4px 0 4px;
+    }
+
+    main nav .user img{
+        width: 30px;
+        height: 30px;
+        margin-right: 9px;
+        margin-top: 4px;
+        border: 2px solid rgb(252, 52, 95);
+    }
+    main section{
+        width: 100%;
+        height: 100%;
+        padding: 0 10px 0 10px;
+    }
+}
